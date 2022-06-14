@@ -13,8 +13,8 @@ public class TodoBusinessImplStubTest {
 
 	@Test
 	public void usingAStub() {
-		TodoService todoService = new TodoServiceStub();
-		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoService);
+		TodoService todoServiceStub = new TodoServiceStub();
+		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceStub);
 		List<String> todos = todoBusinessImpl
 				.retrieveTodosRelatedToSpring("Ranga");
 		assertEquals(2, todos.size());

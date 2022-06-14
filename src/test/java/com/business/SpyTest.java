@@ -56,8 +56,9 @@ public class SpyTest {
 
 		stub(listMock.size()).toReturn(-1);
 
+		stub(listMock.get(0)).toReturn("Sila");
 		assertEquals(-1, listMock.size());
-		assertEquals("Ranga", listMock.get(0));
+		assertEquals("Sila", listMock.get(0));
 
 		// @Spy Annotation
 	}

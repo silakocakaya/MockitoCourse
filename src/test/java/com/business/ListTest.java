@@ -28,6 +28,8 @@ public class ListTest {
 		when(mockList.size()).thenReturn(2).thenReturn(3);
 		assertEquals(2, mockList.size());
 		assertEquals(3, mockList.size());
+		
+		assertThat(mockList.size(), is(3));
 	}
 	
 	@Test
@@ -55,13 +57,14 @@ public class ListTest {
 		
 		List<String> mockList = mock(List.class);
 		
-		//given
+		//given  - setup part  
 		given(mockList.get(0)).willReturn("Test_BDD");
 		
-		//when
+		//when - invocation   
 		String value = mockList.get(0);
 		
-		//then
+		//then - readable assert  
+		//assertEquals("Test_BDD", value);
 		assertThat(value, is("Test_BDD"));
 		assertThat(value, is("Test_BDD"));
 	}

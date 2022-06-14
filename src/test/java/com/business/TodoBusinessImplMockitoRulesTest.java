@@ -9,9 +9,11 @@ import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.InjectMocks;
@@ -27,6 +29,9 @@ public class TodoBusinessImplMockitoRulesTest {
 	//@RunWith(MockitoJUnitRunner.class) yerine rule olarak ekleyebiliriz.
 	@Rule
 	public MockitoRule mockitoRule = MockitoJUnit.rule();
+	
+	@Rule
+	public Timeout timeout = new Timeout(1000, TimeUnit.MILLISECONDS);
 
 	@Mock
 	TodoService todoService;
