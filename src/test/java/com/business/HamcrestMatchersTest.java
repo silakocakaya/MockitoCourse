@@ -17,12 +17,16 @@ public class HamcrestMatchersTest {
 		List<Integer> scores = Arrays.asList(10,20,30,40);
 		
 		assertThat(scores, hasSize(4));
+		assertEquals(4, scores.size());
 		assertThat(scores, contains(10,20,30,40));
 		assertThat(scores, everyItem(greaterThan(5)));
 		assertThat(scores, everyItem(lessThan(50)));
 		
 		assertThat(10, is(greaterThan(5)));
-
+		
+		assertThat(10, is(10));
+		
+		
 		assertThat(5, greaterThan(4));
 		assertThat("", isEmptyString());
 		
